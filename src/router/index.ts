@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue'
+import Home from '../views/Home.vue';
+import About from '../views/About.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,14 +14,19 @@ const routes: Array<RouteRecordRaw> = [
     component: Home
   },
   {
+    path: '/about',
+    name: 'About',
+    component: About,
+  },
+  {
     path: '/message/:id',
     component: () => import('../views/ViewMessage.vue')
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;

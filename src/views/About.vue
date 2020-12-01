@@ -2,7 +2,10 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Inbox</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>About</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -13,13 +16,10 @@
 
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Inbox</ion-title>
+          <ion-title size="large">About</ion-title>
         </ion-toolbar>
       </ion-header>
 
-      <ion-item>
-        <ion-button :router-link="'/about'"> Go to About </ion-button>
-      </ion-item>
       <ion-list>
         <MessageListItem
           v-for="message in messages"
@@ -41,15 +41,15 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  IonItem,
-  IonButton,
+  IonBackButton,
+  IonButtons,
 } from "@ionic/vue";
 import MessageListItem from "@/components/MessageListItem.vue";
 import { defineComponent } from "vue";
 import { getMessages } from "@/data/messages";
 
 export default defineComponent({
-  name: "Home",
+  name: "About",
   data() {
     return {
       messages: getMessages(),
@@ -72,8 +72,8 @@ export default defineComponent({
     IonTitle,
     IonToolbar,
     MessageListItem,
-    IonItem,
-    IonButton,
+    IonBackButton,
+    IonButtons,
   },
 });
 </script>
