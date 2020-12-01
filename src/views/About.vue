@@ -16,6 +16,9 @@
 
       <ion-header collapse="condense">
         <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
           <ion-title size="large">About</ion-title>
         </ion-toolbar>
       </ion-header>
